@@ -11,6 +11,7 @@ class PostsController < ApplicationController
     post = Post.create(content: params[:content], checked: false)
     render json:{ post: post}
 #    redirect_to action: :index これでもすぐに一覧ページに遷移できるが、非同期通信ではない。（データ量が増えると動きが遅くなる？）
+    binding.pry
   end
 
   def checked

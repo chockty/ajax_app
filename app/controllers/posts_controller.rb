@@ -1,13 +1,15 @@
 class PostsController < ApplicationController
   def index
-    @post = Post.all
+    @posts = Post.all.order(id: "DESC")
+    # @post = Post.new
   end
 
-  def new
-  end
+  # def new
+  # end
 
   def create
     Post.create(content: params[:content])
+    redirect_to(root)
   end
 
 end
